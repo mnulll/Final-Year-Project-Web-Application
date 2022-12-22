@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 from scipy.signal import filtfilt
 import scipy
 from sklearn import preprocessing
