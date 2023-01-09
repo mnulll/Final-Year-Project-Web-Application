@@ -36,8 +36,8 @@ elif choice=="Predict Your Emotion!":
     
     url = 'https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link'
 
-    if st.button('Submit'):
-        webbrowser.open_new_tab(url)
+    if st.button('Use Our Sample Data!'):
+        
         # if hrv_file is not None and hrv_file:
         #     input_model=data_preprocessing(hrv_file)
         #     result=predict(input_model)
