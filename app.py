@@ -21,8 +21,8 @@ elif choice=="Predict Your Emotion!":
     if st.button('Use Sample Data'):
         
 
-        HR = open('HR.csv',"r")
-        EDA=open("EDA.csv","r")
+        HR = open('.gitignore/HR.csv',"r")
+        EDA=open(".gitignore/EDA.csv","r")
         input=data_preprocessing(HR,EDA)
         
         class_pred=predict(input)
