@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 from utils import data_preprocessing,predict
 import numpy as np
+import webbrowser
 
-menu = ["About","Predict Your Emotion!","Contact Us"]
+menu = ["About","Predict Your Emotion!","Feedback"]
 choice = st.sidebar.selectbox("Menu",menu)
 
 if choice =="About":
@@ -32,13 +33,25 @@ elif choice=="Predict Your Emotion!":
             st.success("Class 2 - High Arousal Negative Valence")
         else:
             st.success("Class 3 - High Arousal Positive Valence")
+    
+    url = 'https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link'
 
-       
-        
+    if st.button('Submit'):
+        webbrowser.open_new_tab(url)
         # if hrv_file is not None and hrv_file:
         #     input_model=data_preprocessing(hrv_file)
         #     result=predict(input_model)
         #     st.write(result)
+
+elif choice=="Feedback":
+    st.subheader("Submit Your Feedback!")
+    url = 'https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link'
+
+    if st.button('Submit'):
+        webbrowser.open_new_tab(url)
+
+        
+        
 
 
 
