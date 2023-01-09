@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from utils import data_preprocessing,predict
 import numpy as np
+from bokeh.models.widgets import Div
 import webbrowser
 import csv
 
@@ -65,10 +66,17 @@ elif choice=="Predict Your Emotion!":
 
 elif choice=="Feedback":
     st.subheader("Submit Your Feedback !")
-    url = 'https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link'
+    # url = 'https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link'
+
+    # if st.button('Submit'):
+    #     webbrowser.open_new_tab(url)
 
     if st.button('Submit'):
-        webbrowser.open_new_tab(url)
+        js = "window.open('https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link')"  # New tab or window
+        js = "window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScR7C1WY1GFew2Rqx-ykUNjbZZUyuxFxxyOw86aE0LOiUpZ0A/viewform?usp=sf_link'"  # Current tab
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
 
         
         
